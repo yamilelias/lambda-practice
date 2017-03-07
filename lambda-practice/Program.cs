@@ -68,7 +68,52 @@ namespace lambda_practice
                 }
 
                 //5. Listar los 12 meses del año y el numero de empleados contratados por cada mes.
-                
+                Console.WriteLine("Listar los 12 meses del año y el numero de empleados contratados por cada mes.");
+
+                var employees_per_month = ctx.Employees.GroupBy( employee => employee.HireDate.Month);
+
+                foreach(var month in employees_per_month)
+                {
+                    switch (month.Key)
+                    {
+                        case 1:
+                            Console.WriteLine($"En enero hay {month.Count()} contratados.");
+                            break;
+                        case 2:
+                            Console.WriteLine($"En febrero hay {month.Count()} contratados.");
+                            break;
+                        case 3:
+                            Console.WriteLine($"En marzo hay {month.Count()} contratados.");
+                            break;
+                        case 4:
+                            Console.WriteLine($"En abril hay {month.Count()} contratados.");
+                            break;
+                        case 5:
+                            Console.WriteLine($"En mayo hay {month.Count()} contratados.");
+                            break;
+                        case 6:
+                            Console.WriteLine($"En junio hay {month.Count()} contratados.");
+                            break;
+                        case 7:
+                            Console.WriteLine($"En julio hay {month.Count()} contratados.");
+                            break;
+                        case 8:
+                            Console.WriteLine($"En agosto hay {month.Count()} contratados.");
+                            break;
+                        case 9:
+                            Console.WriteLine($"En septiembre hay {month.Count()} contratados.");
+                            break;
+                        case 10:
+                            Console.WriteLine($"En octubre hay {month.Count()} contratados.");
+                            break;
+                        case 11:
+                            Console.WriteLine($"En noviembre hay {month.Count()} contratados.");
+                            break;
+                        case 12:
+                            Console.WriteLine($"En diciembre hay {month.Count()} contratados.");
+                            break;
+                    }
+                }
 
             }
 
