@@ -57,7 +57,15 @@ namespace lambda_practice
                 }
 
                 //4. Listar todos los empleados cuyo aniversario de contratación sea el próximo mes.
-                
+                Console.WriteLine("Listar todos los empleados cuyo aniversario de contratación sea el próximo mes.");
+
+                var birthday_employees = ctx.Employees.Where(
+                    employee => employee.HireDate.Month == (DateTime.Now.Month + 1));
+
+                foreach (var employee in birthday_employees)
+                {
+                    Console.WriteLine($"{employee.FirstName} tiene un aniversario el próximo mes.");
+                }
 
                 //5. Listar los 12 meses del año y el numero de empleados contratados por cada mes.
                 
